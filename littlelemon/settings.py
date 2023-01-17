@@ -53,7 +53,7 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
-DJOSER={"USER_ID_FIELD": "username"}
+DJOSER = {"USER_ID_FIELD": "username"}
 
 ROOT_URLCONF = "littlelemon.urls"
 
@@ -74,13 +74,13 @@ TEMPLATES = [
 ]
 
 REST_FRAMEWORK = {
-    "DEFAULT_AUTHENTICATION_CLASSES":[
+    "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.TokenAuthentication",
         "rest_framework.authentication.SessionAuthentication",
     ],
-    'DEFAULT_PERMISSION_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
-    ]
+    "DEFAULT_PERMISSION_CLASSES": [
+        "rest_framework.permissions.IsAuthenticated",
+    ],
 }
 
 WSGI_APPLICATION = "littlelemon.wsgi.application"
@@ -89,18 +89,16 @@ WSGI_APPLICATION = "littlelemon.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'LittleLemon',
-        'USER' : 'admindjango',
-        'PASSWORD' : 'employee@123!',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-            'init_command': "SET sql_mode='STRICT_TRANS_TABLES'"
-            }
-        }
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "LittleLemon",
+        "USER": "admindjango",
+        "PASSWORD": "employee@123!",
+        "HOST": "localhost",
+        "PORT": "3306",
+        "OPTIONS": {"init_command": "SET sql_mode='STRICT_TRANS_TABLES'"},
     }
+}
 
 
 # Password validation
