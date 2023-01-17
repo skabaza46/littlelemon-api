@@ -2,6 +2,7 @@ from datetime import datetime
 from django.test import TestCase
 from ..models import Booking, Menu
 from django.utils.timezone import make_aware
+from ..serializer import BookingSerializer, MenuSerializer
 
 
 class MenuViewTest(TestCase):
@@ -12,10 +13,12 @@ class MenuViewTest(TestCase):
         Menu.objects.create(title="Green Tea", price=2.50, inventory=120)
 
     def test_getall(self):
+        """Testing retrieving all of the created Menu records"""
 
         items = Menu.objects.all()
+        serialized_items = MenuSerializer(items, many=True)
 
-        self.assertEqual(items.count(), 3)
+        self.assertEqual(len(serialized_items.data), 3)
 
 
 class BookingViewTest(TestCase):
@@ -34,6 +37,9 @@ class BookingViewTest(TestCase):
         Booking.objects.create(name="Annette Lorentz", no_of_guests=3, booking_date=booking_date5)
 
     def test_getall(self):
+        """Test retriveing all of the created Booking records."""
 
         bookings = Booking.objects.all()
-        self.assertEqual(bookings.count(), 5)
+        serialized_items = BookingSerializer(bookings, many=True)
+
+        self.assertEqual(len(serialized_items.data), 5)
