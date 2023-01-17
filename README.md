@@ -23,6 +23,11 @@ python manage.py runserver
 ```
 
 # Endpoints
+
+## Home Page
+```
+/restaurant/
+```
 ## Booking
 ```
 /restaurant/menu
